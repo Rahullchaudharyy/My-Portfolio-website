@@ -76,32 +76,32 @@ if (storedDarkMode === 'true') {
 
 
 // Text to be displayed with typing animation
-const nameText = "I'm Rahul";
-const roleText = "Front-end Developer";
+// const nameText = "I'm Rahul";
+// const roleText = "Front-end Developer";
 
-// Get the heading elements
-const nameHeading = document.getElementById('typing-name');
-const roleHeading = document.getElementById('typing-role');
+// // Get the heading elements
+// const nameHeading = document.getElementById('typing-name');
+// const roleHeading = document.getElementById('typing-role');
 
-// Function to display text with typing animation
-function typeText(element, text) {
-    let index = 0;
-    const typingInterval = setInterval(() => {
-        if (index < text.length) {
-            // Display one character at a time
-            element.textContent += text.charAt(index);
-            index++;
-        } else {
-            clearInterval(typingInterval); // Stop the typing animation
-        }
-    }, 100); // Adjust typing speed (milliseconds per character)
-}
+// // Function to display text with typing animation
+// function typeText(element, text) {
+//     let index = 0;
+//     const typingInterval = setInterval(() => {
+//         if (index < text.length) {
+//             // Display one character at a time
+//             element.textContent += text.charAt(index);
+//             index++;
+//         } else {
+//             clearInterval(typingInterval); // Stop the typing animation
+//         }
+//     }, 100); // Adjust typing speed (milliseconds per character)
+// }
 
-// Start the typing animation for the name and role
-typeText(nameHeading, nameText);
-setTimeout(() => {
-    typeText(roleHeading, roleText);
-}, nameText.length * 100); // Start role typing animation after name typing completes
+// // Start the typing animation for the name and role
+// typeText(nameHeading, nameText);
+// setTimeout(() => {
+//     typeText(roleHeading, roleText);
+// }, nameText.length * 100); // Start role typing animation after name typing completes
 
 
 
@@ -112,3 +112,30 @@ setTimeout(() => {
 
 
 
+
+
+var tl = gsap.timeline();
+tl.from("#logo",{
+    y:-300,
+    duration:1,
+    opacity:0,
+    
+})
+tl.from(".nav-headings",{
+    y:-300,
+    duration:1,
+    opacity:0, 
+    stagger:0.2
+})
+tl.from(".ri-close-fill",{
+    y:-300,
+    duration:1,
+    opacity:0,
+    delay:0.5
+})
+gsap.from(".Headings-with-gsap",{
+    y:400,
+    opacity:0,
+    stagger:0.4,
+    
+})
